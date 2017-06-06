@@ -21,7 +21,7 @@
                </ul>
 
                 <ul class="nav navbar-nav navbar-brand navbar-right">
-                    <li class="active "><a  href="/port/editcode/" >新的脚步</a></li>
+                    <li class="active "><a  href="/port/editcode/0" >新的脚步</a></li>
                 </ul>
 
                <ul>
@@ -64,31 +64,34 @@
                          查看</a>
                      <a href="/port/editcode/{{ code.id }}/" target="{{ code.id }}_blank">
                          修改</a>
+                     <a target="{{ code.id }}_blank">删除</a>
                  </td>
              </tr>
             {% endfor %}
-            </tbody>
+                </tbody>
+
         </table>
     </div>
 </div>
+
     </div>
 
 <div class="container">
-        <div class="nav navbar-nav navbar-brand navbar-right">
-    <div class="pagination" style="padding-top:200px;">
-    <span class="step-links">
-     {% if codes.has_previous %}
-      <a href="?page={{ codes.previous_page_number }}">上一页</a>
-        {% endif %}
-        <span class="curren">
-           {{ codes.number }}/{{ codes.paginator.num_pages }}
-        </span>
-        {% if codes.has_next %}
-         <a href="?page={{ guests.next_page_number }}">下一页</a>
-        {% endif %}
-    </span>
-    </div>
-    </div>
+      <div class="nav navbar-nav navbar-brand navbar-right">
+      <div class="pagination" style="padding-top:200px;">
+         <span class="step-links">
+             {% if codes.has_previous %}
+              <a href="?page={{ codes.previous_page_number }}">上一页</a>
+                {% endif %}
+                <span class="curren">
+                   {{ codes.number }}/{{ codes.paginator.num_pages }}
+                </span>
+                {% if codes.has_next %}
+                 <a href="?page={{ codes.next_page_number }}">下一页</a>
+                {% endif %}
+            </span>
+            </div>
+            </div>
 </div>
 
 </body>
