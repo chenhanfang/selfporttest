@@ -10,4 +10,6 @@ urlpatterns = [
     url(r'codedetail/(?P<code_id>[0-9]+)/$',views.codedetail),
     url(r'editaction$',views.editaction),
     url(r'porttest/$',views2.porttest),
+    url('codedelete/(?P<code_id>[0-9]+)/$',views.codedelete),
+
 ]

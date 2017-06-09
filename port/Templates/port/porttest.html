@@ -1,12 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <style>
+       .input-midium{
+       width:175px;
+       height:33px;
+
+       }
+    </style>
     <meta charset="UTF-8">
     <title>porttest</title>
     <meta name="viewport" content="width=divce-width,initial-scale=1.0">
     <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+
+<!-- (Optional) Latest compiled and minified JavaScript translation files -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/i18n/defaults-*.min.js"></script>
 </head>
 
 <body>
@@ -23,6 +39,31 @@
            </div>
        </div>
    </nav>
+
+<br><br><br>
+  <div class="container">
+      <table class="table table-striped">
+          <thead><h3>
+          <tr><th>接口名称</th><th>接口地址</th><th>请求参数</th><th>请求方式</th><th>预期结果</th></tr>
+          </h3></thead>
+          <tbody>
+              <tr>
+
+                  <td><input id="name" type="text" class="input-midium" name="pname" value="{{ port.pname }}"></td>
+                  <td><input id="url" type="text" class="input-midium" name="url" value="{{ port.url }}"></td>
+                  <td><input id="data" type="text" class="input-midium" name="data" value="{{ port.data }}"></td>
+                  <td><select id="requesttype" name="type" class="selectpicker show-tick form-control" >
+                     <option value="0">get</option>
+                     <option value="1">post</option>
+                  </select></td>
+                  <td><input id="result" type="text" class="input-midium" name="result" value="{{ port.result }}"></td>
+
+              </tr>
+          </tbody>
+      </table>
+      <button type="button" class="btn btn-default" onclick="#">添加</button>
+      <button type="button" class="btn btn-default" onclick="#">测试</button>
+  </div>
 
 
 

@@ -64,7 +64,7 @@
                          查看</a>
                      <a href="/port/editcode/{{ code.id }}/" target="{{ code.id }}_blank">
                          修改</a>
-                     <a target="{{ code.id }}_blank">删除</a>
+                     <a href="/port/codedelete/{{ code.id }}" target="{{ code.id }}_blank" onclick="rec()">删除</a>
                  </td>
              </tr>
             {% endfor %}
@@ -73,6 +73,16 @@
         </table>
     </div>
 </div>
+    <script style="text/javascript" >
+        function rec()
+        {
+           var message = confirm("您确定删除此篇脚步吗？")
+           if (message==true)
+           {
+              var mywin=window.action('/port/codedelete/{{ code.id }}')
+           }
+         }
+    </script>
 
     </div>
 

@@ -77,4 +77,18 @@ def search_name(request):####按名称搜索代码
     except EmptyPage:
         contacts = paginator.page(paginator.num_pages)
     return render(request, 'port/code.html', {'codes': contacts})
+
+def codedelete(request,code_id):###删除脚步
+    code = models.Code.objects.get(pk=code_id)
+    code.delete()
+    codes = Code.objects.all()
+    paginator = Paginator(codes, 10)
+    page = request.GET.get('page')
+    try:
+        contacts = paginator.page(page)
+    except PageNotAnInteger:
+        contacts = paginator.page(1)
+    except EmptyPage:
+        contacts = paginator.page(paginator.num_pages)
+    return render(request, 'port/code.html', {'codes': contacts})
 # Create your views here.
